@@ -2,18 +2,47 @@ package br.com.kailany.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Test Math Operations in SimpleMath Class")
 class SimpleMathTest {
 
+    SimpleMath math;
+    double firstNumber;
+    double secondNumber;
+
+    @BeforeAll // antes de tudo
+    static void setup() {
+        System.out.println("Running @BeforeAll method");
+    }
+
+    @AfterAll // depois de tudo
+    static void cleanup() {
+        System.out.println("Running @AfterAll method");
+    }
+
+    @BeforeEach // antes de cada teste
+    void beforeEachMethod() {
+        System.out.println("Running @BeforeEach method");
+        math = new SimpleMath();
+        firstNumber = 6.2D;
+        secondNumber = 2D;
+    }
+
+    @AfterEach // depois de cada teste
+    void afterEachMethod() {
+        System.out.println("Running @AfterEach method");
+    }
+
     @Test
     @DisplayName("Test 6.2 + 2 = 8.8")
     void testSum() {
-        SimpleMath math = new SimpleMath();
-        double firstNumber = 6.2D;
-        double secondNumber = 2D;
+        System.out.println("Running testSum method");
 
         Double actual = math.sum(firstNumber, secondNumber);
         double expected = 8.2D;
@@ -25,9 +54,7 @@ class SimpleMathTest {
 
     @Test
     void testSubtraction() {
-        SimpleMath math = new SimpleMath();
-        double firstNumber = 6.2D;
-        double secondNumber = 2D;
+        System.out.println("Running testSubtraction method");
 
         Double actual = math.subtraction(firstNumber, secondNumber);
         double expected = 4.2D;
@@ -39,9 +66,7 @@ class SimpleMathTest {
 
     @Test
     void testMultiplication() {
-        SimpleMath math = new SimpleMath();
-        double firstNumber = 6.2D;
-        double secondNumber = 2D;
+        System.out.println("Running testMultiplication method");
 
         Double actual = math.multiplication(firstNumber, secondNumber);
         double expected = 12.4D;
@@ -53,9 +78,7 @@ class SimpleMathTest {
 
     @Test
     void testDivision() {
-        SimpleMath math = new SimpleMath();
-        double firstNumber = 6.2D;
-        double secondNumber = 2D;
+        System.out.println("Running testDivision method");
 
         Double actual = math.division(firstNumber, secondNumber);
         double expected = 3.1D;
@@ -67,9 +90,7 @@ class SimpleMathTest {
 
     @Test
     void testMean() {
-        SimpleMath math = new SimpleMath();
-        double firstNumber = 6.2D;
-        double secondNumber = 2D;
+        System.out.println("Running testMean method");
 
         Double actual = math.mean(firstNumber, secondNumber);
         double expected = 4.1D;
@@ -81,7 +102,8 @@ class SimpleMathTest {
 
     @Test
     void testSquareRoot() {
-        SimpleMath math = new SimpleMath();
+        System.out.println("Running testSquareRoot method");
+
         double number = 81D;
         double expected = 9D;
 
