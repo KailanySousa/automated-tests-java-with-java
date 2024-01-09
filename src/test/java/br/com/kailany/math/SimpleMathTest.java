@@ -3,6 +3,7 @@ package br.com.kailany.math;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterAll;
