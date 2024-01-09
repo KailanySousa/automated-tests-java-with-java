@@ -113,4 +113,17 @@ class SimpleMathTest {
                 () -> "Square Root of " + number +
                         " did not produce " + expected + "!");
     }
+
+    @Test
+    @DisplayName("Test with throws")
+    void testWithThrows() {
+
+        var expectedMessage = "Impossible to divide by zero";
+
+        ArithmeticException actual = assertThrows(ArithmeticException.class, () -> {
+            math.division(firstNumber, 0D);
+        });
+
+        assertEquals(expectedMessage, actual.getMessage());
+    }
 }
